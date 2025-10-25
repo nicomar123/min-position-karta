@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Min Position Karta</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-sA+4ZrLkk1Vf8gP3DuPCsXxFf5nU9OeYpCta41DqQL0=" crossorigin="" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Min Position Karta</h1>
+      <p>Upptäck din position och markera platser du vill komma ihåg.</p>
+    </header>
+
+    <main class="layout">
+      <section class="controls" aria-label="Kontroller">
+        <button id="locateBtn" class="primary">Hitta min position</button>
+        <button id="clearBtn" class="secondary">Rensa markeringar</button>
+        <div class="status" role="status" aria-live="polite"></div>
+        <form id="noteForm" class="note-form">
+          <label for="noteInput">Lägg till en anteckning för markeringen:</label>
+          <div class="input-row">
+            <input id="noteInput" name="note" type="text" maxlength="80" placeholder="Till exempel: Favoritcafé" required />
+            <button type="submit" class="primary">Spara</button>
+          </div>
+        </form>
+        <ul id="noteList" class="note-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="map-wrapper" aria-label="Karta">
+        <div id="map" class="map" role="application" aria-label="Interaktiv karta"></div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Skapat med <a href="https://leafletjs.com" target="_blank" rel="noreferrer">Leaflet</a> och webbläsarens
+        geolokalisering.
+      </p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-o9N1j7kMk8ybSBQT6ayQsoQYhYJ6Xp0mxPo0m0wH0k8=" crossorigin=""></script>
+    <script src="script.js"></script>
+  </body>
+</html>
